@@ -1,6 +1,6 @@
 export default function drawWidget() {
-  const element = document.createElement("div");
-  element.classList.add("wrapper");
+  const element = document.createElement('div');
+  element.classList.add('wrapper');
   element.innerHTML = `
   <div class="container">
     <h1 class="container__title">Popover on top</h1>

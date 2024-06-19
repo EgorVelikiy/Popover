@@ -1,10 +1,10 @@
-import drawWidget from "./drawWidget";
-import addPopover from "./addPopover";
+import drawWidget from './drawWidget';
+import addPopover from './addPopover';
 
 export default class ShowPopover {
   constructor() {
     drawWidget();
-    this.inputElement = document.querySelector(".btn");
+    this.inputElement = document.querySelector('.btn');
   }
 
   init() {
@@ -13,7 +13,7 @@ export default class ShowPopover {
 
   addInputListeners() {
     this.inputElement.addEventListener(
-      "click",
+      'click',
       (event) => {
         event.preventDefault();
         this.togglePopover(event.target);
@@ -25,7 +25,7 @@ export default class ShowPopover {
   togglePopover(target) {
     if (this.popover) {
       this.popover.remove();
-      this.popover = "";
+      this.popover = '';
       return;
     }
     const popoverContent = {
