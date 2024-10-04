@@ -1,8 +1,10 @@
-import ShowPopover from './engine/showPopover';
+import ShowPopover from './components/show_popover/showPopover';
+import createContainer from './components/container/create_container';
 
-export default function app() {
+createContainer();
+export default function start() {
   const showPopover = new ShowPopover();
   showPopover.init();
 }
 
-app();
+start();

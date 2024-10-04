@@ -1,15 +1,13 @@
-export default function drawWidget() {
+export default function createContainer() {
   const element = document.createElement('div');
   element.classList.add('wrapper');
   element.innerHTML = `
   <div class="container">
-    <h1 class="container__title">Popover on top</h1>
-    
     <div class="bd-example">
-      <button type="button" class="btn btn-red" id="toggler">Click to toggle popover</button>
+      <button type="button" class="btn" id="toggler">Toggle popover</button>
     </div>
-
   </div>`;
 
   document.body.append(element);
+  return element;
 }
