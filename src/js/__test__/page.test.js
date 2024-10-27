@@ -1,11 +1,7 @@
 import createContainer from '../components/container/create_container';
 import ShowPopover from '../components/show_popover/showPopover';
-
-// jest.mock('../components/show_popover/showPopover');
-
-// beforeEach(() => {
-//   ShowPopover.mockClear();
-// });
+// eslint-disable-next-line no-unused-vars
+import start from '../app';
 
 test('testing popover innerHTML', () => {
   const popover = new ShowPopover();
@@ -16,6 +12,7 @@ test('testing popover innerHTML', () => {
 });
 
 test('create container', () => {
+  createContainer();
   const wrapper = document.querySelector('.wrapper');
   expect(wrapper.innerHTML).toEqual(createContainer().innerHTML);
 });
