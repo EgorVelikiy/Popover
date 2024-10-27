@@ -2,11 +2,11 @@ import createPopover from '../popover/create_popover';
 
 export default class ShowPopover {
   constructor() {
-    this._btn = document.querySelector('.btn');
+    this._btn = document.getElementById('toggler');
+    this.popover;
   }
 
   init() {
-    console.log(this.knopka);
     this._btn.addEventListener('click', (e) => {
       this.togglePopover(e.target);
     });
@@ -24,10 +24,13 @@ export default class ShowPopover {
         You just clicked on btn: "${target.id}"`,
     };
     this.popover = createPopover(popover);
-    target.offsetParent.appendChild(this.popover);
+    const con = document.querySelector('.container');
 
-    this.popover.style.top = target.offsetTop - this.popover.offsetHeight - 15 + 'px';
+    this.popover.style.top =
+      target.getBoundingClientRect().top - target.offsetHeight / 2 - con.offsetHeight + 'px';
     this.popover.style.left =
-      target.offsetLeft + target.offsetWidth / 2 - this.popover.offsetWidth / 2 + 'px';
+      target.getBoundingClientRect().left - target.offsetWidth / 2 + 20 + 'px';
+
+    document.body.appendChild(this.popover);
   }
 }
